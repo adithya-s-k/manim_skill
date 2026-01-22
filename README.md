@@ -1,10 +1,15 @@
 # Manim Skills Repository
 
-![Visitors](https://visitor-badge.laobi.icu/badge?page_id=adithyaskolavi.manim_skill)
-![GitHub stars](https://img.shields.io/github/stars/adithyaskolavi/manim_skill?style=flat-square)
-![GitHub forks](https://img.shields.io/github/forks/adithyaskolavi/manim_skill?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/adithyaskolavi/manim_skill?style=flat-square)
-![License](https://img.shields.io/github/license/adithyaskolavi/manim_skill?style=flat-square)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=adithya-s-k.manim_skill)
+![GitHub stars](https://img.shields.io/github/stars/adithya-s-k/manim_skill?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/adithya-s-k/manim_skill?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/adithya-s-k/manim_skill?style=flat-square)
+![License](https://img.shields.io/github/license/adithya-s-k/manim_skill?style=flat-square)
+
+> **⚡ Quick Start:** Add both Manim skills to your AI agent instantly:
+> ```bash
+> npx skills add adithya-s-k/manim_skill
+> ```
 
 A comprehensive collection of best practices, patterns, and examples for both **Manim Community Edition** and **ManimGL** (3Blue1Brown's version). This repository provides battle-tested code examples and guidelines for creating mathematical animations.
 
@@ -102,6 +107,49 @@ manimgl --version
 ```bash
 arch -arm64 brew install pkg-config cairo
 ```
+
+---
+
+## 🔌 Skills.sh Integration
+
+This repository provides two **AI Agent Skills** that can be installed with a single command using [skills.sh](https://skills.sh/):
+
+### Install with npx (Recommended)
+
+```bash
+# Install Manim Community Edition best practices
+npx skills add adithya-s-k/manim_skill/skills/manimce-best-practices
+
+# Install ManimGL best practices
+npx skills add adithya-s-k/manim_skill/skills/manimgl-best-practices
+
+# Or install both
+npx skills add adithya-s-k/manim_skill/skills/manimce-best-practices adithya-s-k/manim_skill/skills/manimgl-best-practices
+```
+
+### What are Skills?
+
+Skills are **reusable capabilities for AI coding agents**. Once installed, your AI assistant (like Claude, GitHub Copilot, or Cursor) automatically gains access to:
+- ✅ Domain-specific best practices
+- ✅ Working code examples
+- ✅ Common patterns and anti-patterns
+- ✅ Framework-specific knowledge
+
+The skills follow the [Agent Skills open standard](https://github.com/anthropics/skills) and work across multiple AI tools.
+
+### When Skills Activate
+
+**manimce-best-practices** - Automatically loads when:
+- You import `from manim import *`
+- You use the `manim` CLI command
+- You work with Scene classes, mathematical animations, or LaTeX rendering
+- You create educational videos or visual explanations with Manim Community
+
+**manimgl-best-practices** - Automatically loads when:
+- You import `from manimlib import *`
+- You use the `manimgl` CLI command
+- You work with InteractiveScene, 3D rendering, or camera frame control
+- You use interactive mode with `.embed()` or `checkpoint_paste()`
 
 ---
 
