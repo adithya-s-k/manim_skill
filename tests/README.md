@@ -10,6 +10,10 @@ tests/
 │   ├── test_all_skills.py  # Main test runner with multiprocessing
 │   ├── test_utils.py        # Test utilities
 │   └── README.md            # ManimCE testing documentation
+├── manimgl/          # Tests for ManimGL (3b1b version) skills
+│   ├── test_all_skills.py  # Main test runner with multiprocessing
+│   ├── test_utils.py        # Test utilities
+│   └── README.md            # ManimGL testing documentation
 └── README.md         # This file
 ```
 
@@ -32,6 +36,24 @@ uv run python tests/manimce/test_all_skills.py -j 4
 ```
 
 See [manimce/README.md](manimce/README.md) for detailed documentation.
+
+### ManimGL Tests
+
+Tests for the `manimgl-best-practices` skill to ensure all code examples work correctly.
+
+**Quick Start:**
+```bash
+# Run all ManimGL tests in parallel
+uv run python tests/manimgl/test_all_skills.py
+
+# Test specific file
+uv run python tests/manimgl/test_all_skills.py scenes.md
+
+# Control parallelism
+uv run python tests/manimgl/test_all_skills.py -j 4
+```
+
+See [manimgl/README.md](manimgl/README.md) for detailed documentation.
 
 ## Adding New Test Suites
 
