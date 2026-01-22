@@ -1,21 +1,37 @@
-MIT License
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 
-Copyright (c) 2026 Adithya S Kolavi (adithyaskolavi@gmail.com)
+Copyright (c) 2025 3Blue1Brown (Grant Sanderson) - Original video code
+Copyright (c) 2026 Adithya S Kolavi - Adapted examples and documentation
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This work is adapted from and inspired by the 3Blue1Brown video repository:
+https://github.com/3b1b/videos
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+You are free to:
+- Share: copy and redistribute the material in any medium or format
+- Adapt: remix, transform, and build upon the material
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Under the following terms:
+- Attribution: You must give appropriate credit to both 3Blue1Brown and the
+  adapter, provide a link to the license, and indicate if changes were made.
+- NonCommercial: You may not use the material for commercial purposes.
+- ShareAlike: If you remix, transform, or build upon the material, you must
+  distribute your contributions under the same license as the original.
+
+No additional restrictions: You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license permits.
+
+Full license text: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+---
+
+ATTRIBUTION NOTICE:
+
+The example code in this skill is adapted from 3Blue1Brown's video code
+repository (https://github.com/3b1b/videos), which is licensed under
+CC BY-NC-SA 4.0.
+
+Original author: Grant Sanderson (3Blue1Brown)
+Adapted by: Adithya S Kolavi
+
+The reference documentation and skill structure are original work but
+describe techniques from the adapted code.
