@@ -1,0 +1,17 @@
+# Manim video outputs
+videos/
+media/
+
+# Video files
+*.mp4
+
+# Manim generated files
+partial_movie_files/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS files
+.DS_Store
