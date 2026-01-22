@@ -1,9 +1,6 @@
 ---
 name: manimce-best-practices
-description: Best practices for Manim Community - Mathematical animation engine for Python
-argument-hint: "[topic] e.g., animations, latex, 3d, updaters"
-metadata:
-  tags: manimce, manim-community, animation, python, math, visualization, video, educational
+description: Comprehensive best practices and patterns for Manim Community Edition (ManimCE) - the community-maintained mathematical animation engine for Python. Use when working with Manim Community code for creating mathematical animations, educational videos, or visual explanations. Triggers include working with manim imports (from manim import *), manim CLI commands, Scene classes, mathematical animations, LaTeX rendering, 3D visualizations, or any tasks involving the Manim Community framework. This skill provides domain-specific knowledge for ManimCE specifically, NOT the 3b1b/ManimGL version.
 ---
 
 ## When to use
