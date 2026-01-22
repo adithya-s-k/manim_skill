@@ -194,9 +194,9 @@ expression = Tex(
     t2c={
         R"\int": BLUE,          # Integral
         "e": GREEN,              # Exponential
-        R"\sqrt": ORANGE,        # Square root
         R"\pi": RED,            # Pi
-        R"\frac": YELLOW        # Fraction
+        "x": YELLOW,            # Variable
+        "2": ORANGE             # Exponent
     }
 )
 ```

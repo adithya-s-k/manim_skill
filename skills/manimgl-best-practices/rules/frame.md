@@ -143,7 +143,7 @@ class Camera3DDemo(InteractiveScene):
 
         # 3D content
         cube = Cube(side_length=2)
-        cube.set_fill(BLUE, 0.8)
+        cube.set_color(BLUE)
         self.add(cube)
 
         # Animate camera

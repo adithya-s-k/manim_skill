@@ -148,7 +148,7 @@ small = Tex(R"\pi", font_size=24)
 large = Tex(R"\pi", font_size=72)
 
 # Or scale after creation
-formula.scale(1.5)
+small.scale(1.5)
 ```
 
 ## Backstroke for Readability

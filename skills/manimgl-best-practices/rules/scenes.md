@@ -33,11 +33,13 @@ class BasicScene(Scene):
 For 3D animations with proper camera setup:
 
 ```python
+from manimlib import *
+
 class My3DScene(ThreeDScene):
     def construct(self):
         axes = ThreeDAxes()
         self.add(axes)
-        self.set_camera_orientation(phi=75*DEGREES, theta=-45*DEGREES)
+        self.camera.frame.reorient(-45*DEGREES, 75*DEGREES)
 ```
 
 ## The construct Method

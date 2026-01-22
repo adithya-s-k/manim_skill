@@ -388,7 +388,7 @@ class LightControl(Scene):
         self.add(sphere)
 
         # Show light position (for debugging)
-        light_indicator = Dot3D(color=YELLOW)
+        light_indicator = Dot(color=YELLOW)
         light_indicator.add_updater(lambda m: m.move_to(light.get_center()))
         self.add(light_indicator)
 

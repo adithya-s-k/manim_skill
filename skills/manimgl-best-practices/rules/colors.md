@@ -185,8 +185,8 @@ from manimlib.utils.color import rgb_to_color
 custom_color = rgb_to_color([0.5, 0.3, 0.8])
 circle = Circle(color=custom_color)
 
-# RGB from 0-255 range
-custom_color = rgb_to_color([128, 77, 204], use_255=True)
+# RGB from 0-255 range (convert to 0-1)
+custom_color = rgb_to_color([128/255, 77/255, 204/255])
 ```
 
 ### Using Hex Colors
