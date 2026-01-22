@@ -171,7 +171,7 @@ class LayeredParallax(InteractiveScene):
             layer = GlowDots(positions)
             layer.set_color(color)
             layer.set_glow_factor(1.5)
-            layer.set_radii(0.05)
+            layer.set_radii(np.full(n_stars_per_layer, 0.05))
             layers.append(layer)
 
         all_stars = Group(*layers)

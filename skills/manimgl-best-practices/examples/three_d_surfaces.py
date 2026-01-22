@@ -83,7 +83,7 @@ class SphereSurface(InteractiveScene):
                     np.sin(t) * np.cos(phi),
                     np.sin(phi)
                 ]),
-                t_range=(0, TAU),
+                t_range=(0, TAU, 0.1),
                 color=WHITE,
                 stroke_width=1,
                 stroke_opacity=0.5,
@@ -98,7 +98,7 @@ class SphereSurface(InteractiveScene):
                     np.sin(theta) * np.cos(t),
                     np.sin(t)
                 ]),
-                t_range=(-PI/2, PI/2),
+                t_range=(-PI/2, PI/2, 0.1),
                 color=WHITE,
                 stroke_width=1,
                 stroke_opacity=0.5,
@@ -194,14 +194,14 @@ class SaddleSurface(InteractiveScene):
         # Show cross sections
         x_section = ParametricCurve(
             lambda t: [t, 0, 0.3 * t**2],
-            t_range=(-2, 2),
+            t_range=(-2, 2, 0.1),
             color=RED,
             stroke_width=4,
         )
 
         y_section = ParametricCurve(
             lambda t: [0, t, -0.3 * t**2],
-            t_range=(-2, 2),
+            t_range=(-2, 2, 0.1),
             color=BLUE,
             stroke_width=4,
         )

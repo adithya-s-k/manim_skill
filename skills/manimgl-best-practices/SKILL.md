@@ -201,3 +201,15 @@ manimgl --version
 4. **self.frame vs self.camera.frame** - ManimGL uses `self.frame` directly
 5. **fix_in_frame()** - Call on the mobject, not the scene
 6. **Interactive mode** - Use `-se` flag for interactive development
+
+## License & Attribution
+
+This skill contains example code adapted from [3Blue1Brown's video repository](https://github.com/3b1b/videos) by Grant Sanderson.
+
+**License:** [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+- **Attribution required** - Credit both 3Blue1Brown and the adapter
+- **NonCommercial** - Not for commercial use
+- **ShareAlike** - Derivatives must use the same license
+
+See [LICENSE.txt](LICENSE.txt) for full details.
