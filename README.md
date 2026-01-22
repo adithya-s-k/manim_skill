@@ -1,5 +1,11 @@
 # Manim Skills Repository
 
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=adithyaskolavi.manim_skill)
+![GitHub stars](https://img.shields.io/github/stars/adithyaskolavi/manim_skill?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/adithyaskolavi/manim_skill?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/adithyaskolavi/manim_skill?style=flat-square)
+![License](https://img.shields.io/github/license/adithyaskolavi/manim_skill?style=flat-square)
+
 A comprehensive collection of best practices, patterns, and examples for both **Manim Community Edition** and **ManimGL** (3Blue1Brown's version). This repository provides battle-tested code examples and guidelines for creating mathematical animations.
 
 ## 📚 About the Two Versions
@@ -271,7 +277,9 @@ Found an issue with an example? Want to add a new best practice?
 
 ## 📄 License
 
-This repository contains educational materials and code examples. Individual licenses may apply to the respective Manim frameworks.
+This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Note**: This license applies to the educational materials and code examples in this repository. The underlying Manim frameworks (Manim Community Edition and ManimGL) have their own respective licenses.
 
 ---
 
@@ -326,4 +334,29 @@ This repository contains educational materials and code examples. Individual lic
 
 ---
 
-Made with ❤️ for the Manim community
+## 🙏 Acknowledgments
+
+This repository exists thanks to the incredible work of:
+
+### Grant Sanderson (3Blue1Brown)
+Creator of the original **Manim** animation engine and the **3Blue1Brown** YouTube channel. Grant's pioneering work in mathematical visualization has inspired millions of learners worldwide and created an entirely new paradigm for explaining complex concepts through programmatic animation. His commitment to open-source education and visual storytelling has fundamentally changed how mathematics is taught and understood.
+
+**Website**: https://www.3blue1brown.com/
+**YouTube**: https://www.youtube.com/@3blue1brown
+**Manim (ManimGL)**: https://github.com/3b1b/manim
+
+### The Manim Community
+The dedicated team and contributors who maintain **Manim Community Edition**, ensuring the framework remains accessible, well-documented, and actively developed. Their tireless efforts in creating comprehensive documentation, managing community support, and continuously improving the codebase have made mathematical animation accessible to educators, students, and creators everywhere.
+
+**Website**: https://www.manim.community/
+**GitHub**: https://github.com/ManimCommunity/manim
+**Discord**: https://www.manim.community/discord/
+
+---
+
+### Standing on the Shoulders of Giants
+
+Both frameworks represent countless hours of development, documentation, community support, and creative problem-solving. This repository simply aims to organize and share knowledge about these powerful tools. All credit for the underlying technology goes to Grant Sanderson and the Manim Community contributors.
+
+Thank you for making mathematical beauty programmable and accessible to all. 🎓✨
+
