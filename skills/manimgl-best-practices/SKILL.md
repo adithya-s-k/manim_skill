@@ -1,13 +1,12 @@
 ---
 name: manimgl-best-practices
-description: Comprehensive best practices and patterns for ManimGL (3b1b's version) - Grant Sanderson's original mathematical animation engine with OpenGL rendering and interactive development. Use when working with ManimGL code for creating mathematical animations, 3Blue1Brown-style visualizations, or interactive 3D scenes. Triggers include working with manimlib imports (from manimlib import *), manimgl CLI commands, InteractiveScene classes, 3D rendering, camera frame control (self.frame), interactive mode with self.embed(), or any tasks involving the ManimGL framework. This skill provides domain-specific knowledge for ManimGL specifically, NOT the Manim Community Edition.
+description: |
+  Trigger when: (1) User mentions "manimgl" or "ManimGL" or "3b1b manim", (2) Code contains `from manimlib import *`, (3) User runs `manimgl` CLI commands, (4) Working with InteractiveScene, self.frame, self.embed(), ShowCreation(), or ManimGL-specific patterns.
+
+  Best practices for ManimGL (Grant Sanderson's 3Blue1Brown version) - OpenGL-based animation engine with interactive development. Covers InteractiveScene, Tex with t2c, camera frame control, interactive mode (-se flag), 3D rendering, and checkpoint_paste() workflow.
+
+  NOT for Manim Community Edition (which uses `manim` imports and `manim` CLI).
 ---
-
-## When to use
-
-Use this skill whenever you are working with ManimGL (3b1b's version) code to create mathematical animations and visualizations. This skill provides domain-specific knowledge for Grant Sanderson's version of Manim used in 3Blue1Brown videos.
-
-**Important:** ManimGL uses `from manimlib import *` imports and the `manimgl` CLI command. The community version uses `manim` and different imports - do not confuse them.
 
 ## How to use
 
