@@ -145,17 +145,16 @@ class LaggedStartMapExample(Scene):
 
         # Apply FadeIn to all dots with stagger
         self.play(LaggedStartMap(FadeIn, dots, lag_ratio=0.1))
+        self.wait(0.5)
 
-        # Apply a method using ApplyMethod
-        self.play(LaggedStartMap(
-            ApplyMethod,
-            dots,
-            lambda m: m.set_color(YELLOW),
+        # Change color with stagger using LaggedStart
+        self.play(LaggedStart(
+            *[dot.animate.set_color(YELLOW) for dot in dots],
             lag_ratio=0.05
         ))
 ```
 
-LaggedStartMap is cleaner than manually creating animations for each submobject.
+LaggedStartMap is cleaner for applying the same animation to each submobject. For property changes, use LaggedStart with `.animate`.
 
 ## AnimationGroup with run_time
 

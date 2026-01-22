@@ -221,12 +221,12 @@ class SectorArcExample(Scene):
     def construct(self):
         # Sector (pie slice)
         sector = Sector(
-            outer_radius=2,
+            radius=2,
             angle=PI/2,
             start_angle=0,
             color=RED,
             fill_opacity=0.8
-        )
+        ).shift(LEFT * 2)
 
         # Arc (just the curve)
         arc = Arc(
@@ -234,7 +234,7 @@ class SectorArcExample(Scene):
             angle=PI/2,
             start_angle=PI,
             color=BLUE
-        )
+        ).shift(RIGHT * 2)
 
         self.add(sector, arc)
 ```

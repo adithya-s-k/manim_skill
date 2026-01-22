@@ -123,7 +123,7 @@ class BlinkExample(Scene):
         cursor = Rectangle(height=1, width=0.1, fill_opacity=1)
         self.add(cursor)
 
-        self.play(Blink(cursor, blinks=5, blink_on_time=0.3))
+        self.play(Blink(cursor, blinks=5, time_on=0.3, time_off=0.3))
 ```
 
 ## Word by Word Animation

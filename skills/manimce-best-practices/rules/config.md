@@ -101,12 +101,10 @@ pixel_height = 1080
 Access and modify config in your Python code:
 
 ```python
-from manim import *
-
 # Access config values
-print(config.pixel_width)
-print(config.frame_rate)
-print(config.background_color)
+config.pixel_width  # e.g., 1920
+config.frame_rate  # e.g., 30
+config.background_color  # e.g., BLACK
 
 # Modify config (before creating scenes)
 config.pixel_width = 1920

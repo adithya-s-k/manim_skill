@@ -40,9 +40,10 @@ Group is for mixing different mobject types (VMobjects, ImageMobjects, etc.).
 class GroupExample(Scene):
     def construct(self):
         # Mix different types
+        text = Text("Hello")
         group = Group(
             Circle(),
-            ImageMobject("image.png")
+            text
         )
         self.add(group)
 ```
@@ -74,20 +75,18 @@ Arrange mobjects in a line.
 class ArrangeExample(Scene):
     def construct(self):
         # Horizontal arrangement (default)
-        row = VGroup(*[Circle() for _ in range(5)])
-        row.arrange(RIGHT)
+        row = VGroup(*[Circle().scale(0.3) for _ in range(5)])
+        row.arrange(RIGHT, buff=0.5).shift(UP * 2)
 
         # Vertical arrangement
-        column = VGroup(*[Square() for _ in range(4)])
-        column.arrange(DOWN)
+        column = VGroup(*[Square().scale(0.3) for _ in range(4)])
+        column.arrange(DOWN, buff=0.5).shift(LEFT * 2)
 
-        # With buffer
-        spaced = VGroup(*[Triangle() for _ in range(3)])
-        spaced.arrange(RIGHT, buff=1)
+        # With custom buffer
+        spaced = VGroup(*[Triangle().scale(0.3) for _ in range(3)])
+        spaced.arrange(RIGHT, buff=1).shift(DOWN * 2)
 
-        # Centered (default) vs not centered
-        group.arrange(RIGHT, center=True)   # Default
-        group.arrange(RIGHT, center=False)
+        self.add(row, column, spaced)
 ```
 
 ### Direction Options
