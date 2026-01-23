@@ -13,6 +13,10 @@
 
 A comprehensive collection of best practices, patterns, and examples for both **Manim Community Edition** and **ManimGL** (3Blue1Brown's version). This repository provides battle-tested code examples and guidelines for creating mathematical animations.
 
+
+https://github.com/user-attachments/assets/3cd398b7-7cc6-43c1-a6e9-20077be6b009
+
+
 ## 📚 About the Two Versions
 
 ### Manim Community Edition (`manim`)
