@@ -101,6 +101,19 @@ manim -pql scene.py MyScene
 manim -pqh scene.py MyScene
 ```
 
+### Required Final-Frame Layout Check
+
+After rendering a ManimCE video that includes text, labels, formulas, captions, legends, annotations, or UI-like panels, verify the last frame before delivery:
+
+```bash
+# Render/save the final frame for layout inspection
+manim -s -ql scene.py MyScene
+```
+
+Inspect the generated final-frame PNG under `media/images/...` and check whether any text overlaps other text, graph labels, equations, axes, plotted objects, borders, or the edge of the frame. Treat overlaps, clipped text, cramped formulas, and labels that visually collide with curves or shaded regions as layout defects.
+
+If text overlap exists, adjust the scene layout and render again. Prefer `VGroup(...).arrange(...)`, `next_to(...)`, `to_edge(...)`, `align_to(...)`, `SurroundingRectangle(..., buff=...)`, smaller `font_size`, wider panel spacing, or moving explanatory text to a side panel. Repeat the final-frame check until the last frame is readable and collision-free.
+
 ### Key Differences from 3b1b/ManimGL
 
 | Feature | Manim Community | 3b1b/ManimGL |
