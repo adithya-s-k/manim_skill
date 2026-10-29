@@ -6,18 +6,18 @@
 ![GitHub issues](https://img.shields.io/github/issues/adithya-s-k/manim_skill?style=flat-square)
 ![License](https://img.shields.io/github/license/adithya-s-k/manim_skill?style=flat-square)
 
-> **⚡ Quick Start:** Add both Manim skills to your AI agent instantly:
+> **⚡ Quick Start:** Add the Manim skills to your AI agent instantly:
 > ```bash
 > npx skills add adithya-s-k/manim_skill
 > ```
 
-A comprehensive collection of best practices, patterns, and examples for both **Manim Community Edition** and **ManimGL** (3Blue1Brown's version). This repository provides battle-tested code examples and guidelines for creating mathematical animations.
+A comprehensive collection of best practices, patterns, and examples for **Manim Community Edition**, **ManimGL** (3Blue1Brown's version), and **ManimGX** (the Rust + wgpu engine for agents). This repository provides battle-tested code examples and guidelines for creating mathematical animations.
 
 
 https://github.com/user-attachments/assets/3cd398b7-7cc6-43c1-a6e9-20077be6b009
 
 
-## 📚 About the Two Versions
+## 📚 About the Versions
 
 ### Manim Community Edition (`manim`)
 - **Repository**: https://github.com/ManimCommunity/manim
@@ -33,16 +33,25 @@ https://github.com/user-attachments/assets/3cd398b7-7cc6-43c1-a6e9-20077be6b009
 - **Command**: `manimgl` CLI
 - **Import**: `from manimlib import *`
 
-> **Important**: These are **separate, incompatible** frameworks. Code written for one will not work with the other without modifications.
+### ManimGX (`manimgx`)
+- **Repository**: https://github.com/academa-labs/manimgx
+- **Focus**: A Rust + wgpu engine that speaks Manim CE's API; Typst typesetting, fast 3D, and `manimgx inspect` for agent feedback
+- **Best For**: Fast renders, 3D, and agent-driven workflows
+- **Command**: `manimgx` CLI
+- **Import**: `import manimgx as m` or `from manimgx import *`
+
+> **Important**: These are **separate frameworks** with different behavior. Code written for one will not always work with another without modifications. ManimGX keeps CE's API names but decides how they behave; see `skills/manimgx-best-practices/rules/differences.md`.
 
 ---
 
 ## 🚀 Installation
 
-### Prerequisites (Both Versions)
+### Prerequisites (Manim Community Edition and ManimGL)
 1. **Python 3.7+** - Required
 2. **FFmpeg** - For video encoding
 3. **LaTeX** - For mathematical typesetting (TeX Live, MiKTeX, or MacTeX)
+
+> **ManimGX** needs none of these: install it with Python 3.13+ and it brings its own typesetting and encoder. See [Installing ManimGX](#installing-manimgx).
 
 #### Install FFmpeg
 
@@ -114,9 +123,30 @@ arch -arm64 brew install pkg-config cairo
 
 ---
 
+### Installing ManimGX
+
+```bash
+# Using uv (recommended; installs Python 3.13 if needed)
+uv tool install --python 3.13 manimgx
+
+# Using pip in a Python 3.13+ virtual environment
+python3.13 -m venv .venv && .venv/bin/pip install manimgx
+
+# Verify installation
+manimgx --version
+```
+
+ManimGX does not need LaTeX, FFmpeg, or a plugin system: Typst typesets the text and math,
+and the wheel encodes the video. It draws on the GPU (Metal, Direct3D 12, Vulkan) and falls
+back to CPU rendering when there is none.
+
+**Documentation**: https://manimgx.academa.ai/
+
+---
+
 ## 🔌 Skills.sh Integration
 
-This repository provides two **AI Agent Skills** that can be installed with a single command using [skills.sh](https://skills.sh/):
+This repository provides three **AI Agent Skills** that can be installed with a single command using [skills.sh](https://skills.sh/):
 
 ### Install with npx (Recommended)
 
@@ -127,8 +157,11 @@ npx skills add adithya-s-k/manim_skill/skills/manimce-best-practices
 # Install ManimGL best practices
 npx skills add adithya-s-k/manim_skill/skills/manimgl-best-practices
 
-# Or install both
-npx skills add adithya-s-k/manim_skill/skills/manimce-best-practices adithya-s-k/manim_skill/skills/manimgl-best-practices
+# Install ManimGX best practices
+npx skills add adithya-s-k/manim_skill/skills/manimgx-best-practices
+
+# Or install all
+npx skills add adithya-s-k/manim_skill/skills/manimce-best-practices adithya-s-k/manim_skill/skills/manimgl-best-practices adithya-s-k/manim_skill/skills/manimgx-best-practices
 ```
 
 ### What are Skills?
@@ -155,6 +188,12 @@ The skills follow the [Agent Skills open standard](https://github.com/anthropics
 - You work with InteractiveScene, 3D rendering, or camera frame control
 - You use interactive mode with `.embed()` or `checkpoint_paste()`
 
+**manimgx-best-practices** - Automatically loads when:
+- You import `manimgx` (`import manimgx as m` or `from manimgx import *`)
+- You use the `manimgx` CLI (`render`, `inspect`, `present`)
+- You work with Typst text/math, `Scene` camera frames, 3D scenes, or `manimgx inspect`
+- You need ManimGX's behavior where it differs from Manim CE
+
 ---
 
 ## 📖 Using This Repository
@@ -172,17 +211,26 @@ manim_skill/
 │   │       ├── mobjects.md
 │   │       └── ...
 │   │
-│   └── manimgl-best-practices/     # ManimGL skills
+│   ├── manimgl-best-practices/     # ManimGL skills
+│   │   ├── SKILL.md
+│   │   └── rules/
+│   │       ├── animations.md
+│   │       ├── 3d.md
+│   │       ├── camera.md
+│   │       └── ...
+│   │
+│   └── manimgx-best-practices/     # ManimGX skills
 │       ├── SKILL.md
 │       └── rules/
-│           ├── animations.md
-│           ├── 3d.md
-│           ├── camera.md
+│           ├── differences.md
+│           ├── scenes.md
+│           ├── latex.md
 │           └── ...
 │
 └── tests/
     ├── manimce/                    # Tests for Community Edition
-    └── manimgl/                    # Tests for ManimGL
+    ├── manimgl/                    # Tests for ManimGL
+    └── manimgx/                    # Tests for ManimGX
 ```
 
 ### What's Inside Each Skill File?
@@ -243,6 +291,29 @@ manimgl scene.py BasicExample --write_file
 # -w: write file without opening
 ```
 
+### ManimGX
+
+```python
+import manimgx as m
+
+class BasicExample(m.Scene):
+    def construct(self):
+        circle = m.Circle()
+        circle.set_fill(m.BLUE, opacity=0.5)
+        circle.set_stroke(m.BLUE_E, width=4)
+
+        self.play(m.Create(circle))
+        self.wait()
+```
+
+**Run it:**
+```bash
+manimgx render scene.py BasicExample
+# Writes BasicExample.mp4 and a storyboard beside the file
+# Add -r 1280x720 --fps 30 for a quick draft
+# manimgx inspect scene.py checks layout before you render
+```
+
 ---
 
 ## 🧪 Running Tests
@@ -275,24 +346,40 @@ uv run python tests/manimgl/test_all_skills.py 3d.md
 uv run python tests/manimgl/test_all_skills.py -j 4
 ```
 
+### Test ManimGX Skills
+
+```bash
+# Test all files (uses `manimgx` on PATH, or `uv run --with manimgx`)
+python3 tests/manimgx/test_all_skills.py
+
+# Test specific file
+python3 tests/manimgx/test_all_skills.py latex.md
+
+# Run with multiple workers
+python3 tests/manimgx/test_all_skills.py -j 4
+```
+
 > **Note**: Parallel testing with many workers can cause out-of-memory errors. Use 4-6 workers max, or test files individually.
 
 ---
 
 ## 🔍 Key Differences Between Versions
 
-| Feature | Manim Community | ManimGL |
-|---------|----------------|---------|
-| **Import** | `from manim import *` | `from manimlib import *` |
-| **CLI Command** | `manim` | `manimgl` |
-| **Scene Base Class** | `Scene`, `MovingCameraScene` | `Scene`, `InteractiveScene` |
-| **Creation Animation** | `Create()` | `ShowCreation()` |
-| **Text Class** | `Text()`, `MathTex()` | `Text()`, `Tex()` |
-| **3D Rendering** | Limited | Full OpenGL support |
-| **Interactive Mode** | No | Yes (`-se` flag, `.embed()`) |
-| **Camera Control** | `MovingCameraScene` | `self.camera.frame` |
-| **Configuration** | Python config | YAML files |
-| **Color Constants** | Same | Same + variations (e.g., `BLUE_A`, `BLUE_E`) |
+| Feature | Manim Community | ManimGL | ManimGX |
+|---------|----------------|---------|---------|
+| **Import** | `from manim import *` | `from manimlib import *` | `import manimgx as m` / `from manimgx import *` |
+| **CLI Command** | `manim` | `manimgl` | `manimgx` |
+| **Scene Base Class** | `Scene`, `MovingCameraScene` | `Scene`, `InteractiveScene` | `Scene`, `ThreeDScene` |
+| **Creation Animation** | `Create()` | `ShowCreation()` | `Create()` |
+| **Text Class** | `Text()`, `MathTex()` | `Text()`, `Tex()` | `Text()`, `MathTex()` (Typst) |
+| **3D Rendering** | Limited | Full OpenGL support | Full GPU support (wgpu) |
+| **Interactive Mode** | No | Yes (`-se` flag, `.embed()`) | No |
+| **Camera Control** | `MovingCameraScene` | `self.camera.frame` | `self.camera.frame` (every `Scene`) |
+| **Configuration** | Python config | YAML files | `m.config` |
+| **Color Constants** | Same | Same + variations (e.g., `BLUE_A`, `BLUE_E`) | Same |
+
+ManimGX also has a layout-checking `inspect` command that ManimCE and ManimGL do not; see
+`skills/manimgx-best-practices/rules/inspect.md`.
 
 ---
 
@@ -314,6 +401,14 @@ Start with these guides in `skills/manimgl-best-practices/rules/`:
 4. **3d.md** - 3D object creation and rendering
 5. **interactive.md** - Interactive development workflow
 
+### For ManimGX:
+Start with these guides in `skills/manimgx-best-practices/rules/`:
+1. **differences.md** - ManimGX vs Manim CE (read first)
+2. **scenes.md** - Scene structure and per-frame time
+3. **latex.md** - MathTex/Tex with Typst
+4. **inspect.md** - Storyboard and layout checks
+5. **camera.md** - Moving camera and 3D
+
 ---
 
 ## 🤝 Contributing
@@ -331,7 +426,7 @@ Found an issue with an example? Want to add a new best practice?
 
 This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**Note**: This license applies to the educational materials and code examples in this repository. The underlying Manim frameworks (Manim Community Edition and ManimGL) have their own respective licenses.
+**Note**: This license applies to the educational materials and code examples in this repository. The underlying Manim frameworks (Manim Community Edition, ManimGL, and ManimGX) have their own respective licenses.
 
 ---
 
@@ -346,6 +441,12 @@ This repository is licensed under the MIT License - see the [LICENSE](LICENSE) f
 - **Documentation**: https://3b1b.github.io/manim/
 - **GitHub**: https://github.com/3b1b/manim
 - **Tutorial Videos**: Grant's YouTube channel
+
+### ManimGX
+- **Documentation**: https://manimgx.academa.ai/
+- **GitHub**: https://github.com/academa-labs/manimgx
+- **Agent guide**: https://manimgx.academa.ai/llms.txt
+- **Gallery**: https://manimgx.academa.ai/gallery/
 
 ### General
 - **3Blue1Brown**: https://www.youtube.com/@3blue1brown
